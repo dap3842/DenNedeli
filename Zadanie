@@ -1,0 +1,55 @@
+import math
+global bb
+a=int(input('день'))
+b=int(input("месяц"))
+c=int(input('год'))
+
+if b==1:
+    bb=0
+elif b==2:
+    bb=31
+elif b==3:
+    bb=59
+elif b==4:
+    bb=90
+elif b==5:
+    bb=120
+elif b==6:
+    bb=151
+elif b==7:
+    bb=181
+elif b==8:
+    bb=221
+elif b==9:
+    bb=243
+elif b==10:
+    bb=273
+elif b==11:
+    bb=304
+elif b == 12:
+    bb = 334
+vis=0
+for i in range(c):
+    if c%4==0 and c%100!=0:
+        vis+=1
+SSum=a+c*365+bb+vis
+if SSum>=2000:
+    SSum-=2
+Ned=SSum%7
+if Ned==0:
+    print('понедельник')
+elif Ned==1:
+    print('вторник')
+elif Ned==2:
+    print('среда')
+elif Ned==3:
+    print('четверг')
+elif Ned==4:
+    print('пятница')
+elif Ned==5:
+    print('суббота')
+elif Ned==6:
+    print('воскресенье')
+else:
+    print(Ned)
+
